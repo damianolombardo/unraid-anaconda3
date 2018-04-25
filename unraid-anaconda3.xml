@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>anaconda3</Name>
+  <Repository>continuumio/anaconda3</Repository>
+  <Registry>https://hub.docker.com/r/continuumio/anaconda3/~/dockerfile/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/continuumio/anaconda3/</Support>
+  <Project/>
+  <Overview>&#xD;
+&#xD;
+[b]Converted By Community Applications[/b]</Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:8888]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://secure.gravatar.com/avatar/f3257938262658419b4d2c95011b2e2e.jpg?s=512&amp;amp;r=g&amp;amp;d=mm</Icon>
+  <ExtraParams/>
+  <PostArgs>/bin/bash -c "/opt/conda/bin/conda install jupyter -y --quiet &amp;amp;&amp;amp;  /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root"</PostArgs>
+  <DateInstalled>1524630280</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <DonateImg/>
+  <MinVer/>
+  <Description>&#xD;
+&#xD;
+[b]Converted By Community Applications[/b]</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8888</HostPort>
+        <ContainerPort>8888</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/development/</HostDir>
+      <ContainerDir>/opt/notebooks</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Config Name="Host Path 1" Target="/opt/notebooks" Default="" Mode="rw" Description="Container Path: /opt/notebooks" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/development/</Config>
+  <Config Name="Host Port 1" Target="8888" Default="" Mode="tcp" Description="Container Port: 8888" Type="Port" Display="always" Required="false" Mask="false">8888</Config>
+</Container>
