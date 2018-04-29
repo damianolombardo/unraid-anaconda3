@@ -1,4 +1,4 @@
-#!/bin/sh -v
+#!/bin/bash
 export CONDA_EXE='/opt/conda/bin/conda'
 $CONDA_EXE clean --all -y  
 $CONDA_EXE config --prepend pkgs_dirs /opt/conda_cache
