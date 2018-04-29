@@ -11,7 +11,7 @@ $CONDA_EXE install $CONDAPACKAGES -y
 
 export NOTEBOOKPASSWORDHASHED=$($CONDA_PYTHON_EXE -c "from notebook.auth import passwd
 from os import environ
-passwd(environ['NOTEBOOKPASSWORD'])")
+print(passwd(environ['NOTEBOOKPASSWORD']))")
 
 /opt/conda/bin/jupyter notebook --notebook-dir=\'$JUPYTER_SERVER_ROOT\' --ip=\'$NOTEBOOKIP\' --port=$NOTEBOOKPORT --no-browser --allow-root --NotebookApp.password=\'$NOTEBOOKPASSWORDHASHED\'
 
