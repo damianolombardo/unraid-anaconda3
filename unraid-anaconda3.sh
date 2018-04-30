@@ -11,15 +11,19 @@ $CONDA_EXE update -n base conda -y
 $CONDA_EXE install jupyter -y 
 $CONDA_EXE install -c conda-forge jupyter_contrib_nbextensions -y 
 
-$CONDA_EXE install $CONDAPACKAGES -y 
+$CONDA_EXE install $CONDA_PACKAGES -y 
 
 
 echo "from notebook.auth import passwd
 from os import environ
-print(passwd(environ['NOTEBOOKPASSWORD']))" >> pwgen.py
+print(passwd(environ['NOTEBOOK_PASSWORD']))" >> pwgen.py
 
-export NOTEBOOKPASSWORDHASHED=$($CONDA_PYTHON_EXE pwgen.py)
+export NOTEBOOK_PASSWORD_HASHED=$($CONDA_PYTHON_EXE pwgen.py)
 
-/opt/conda/bin/jupyter notebook --notebook-dir=\'$JUPYTER_SERVER_ROOT\' --ip=\'$NOTEBOOKIP\' --port=$NOTEBOOKPORT --no-browser --allow-root --NotebookApp.password=\'$NOTEBOOKPASSWORDHASHED\'
+if [ ! -f /root/.jupyter/jupyter_notebook_config.py];then
+    /opt/conda/bin/jupyter notebook --generate-config
+fi
+
+/opt/conda/bin/jupyter notebook --notebook-dir=\'$NOTEBOOK_DIR\' --ip=\'$NOTEBOOK_IP\' --port=$NOTEBOOK_PORT --no-browser --allow-root --NotebookApp.password=\'$NOTEBOOK_PASSWORD_HASHED\'
 
 
