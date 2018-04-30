@@ -16,7 +16,7 @@ $CONDA_EXE install $CONDA_PACKAGES -y
 
 echo "from notebook.auth import passwd
 from os import environ
-print(passwd(environ['NOTEBOOK_PASSWORD']))" >> pwgen.py
+print(passwd(environ['NOTEBOOK_PASSWORD']))" > pwgen.py
 
 export NOTEBOOK_PASSWORD_HASHED=$($CONDA_PYTHON_EXE pwgen.py)
 
