@@ -21,7 +21,7 @@ print(passwd(environ['NOTEBOOK_PASSWORD']))" > pwgen.py
 
 export NOTEBOOK_PASSWORD_HASHED=$($CONDA_PYTHON_EXE pwgen.py)
 
-if [ ! -f /root/.jupyter/jupyter_notebook_config.py];then
+if [ ! -f /root/.jupyter/jupyter_notebook_config.py ]; then
     /opt/conda/bin/jupyter notebook --generate-config
 fi
 
