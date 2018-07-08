@@ -64,6 +64,11 @@
       <Mode/>
     </Variable>
     <Variable>
+      <Value>autopep8</Value>
+      <Name>PIP_PACKAGES</Name>
+      <Mode/>
+    </Variable>  
+    <Variable>
       <Value>/opt/notebooks</Value>
       <Name>NOTEBOOK_DIR</Name>
       <Mode/>
