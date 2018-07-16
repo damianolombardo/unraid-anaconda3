@@ -2,17 +2,21 @@
 export CONDA_EXE='/opt/conda/bin/conda'
 export CONDA_PYTHON_EXE='opt/conda/bin/python'
 
+echo setting conda cache
 $CONDA_EXE config --remove pkgs_dirs /opt/conda_pkgs_cache
 cp -n -r /opt/conda/pkgs/* /opt/conda_pkgs_cache/
 $CONDA_EXE clean --all -y  
 $CONDA_EXE config --prepend pkgs_dirs /opt/conda_pkgs_cache
 
+echo update conda cache
 $CONDA_EXE update -n base conda -y 
 $CONDA_EXE install jupyter -y 
 $CONDA_EXE install -c conda-forge jupyter_contrib_nbextensions -y 
-
+echo install conda packages
 $CONDA_EXE install $CONDA_PACKAGES -y 
+
 pip --cache-dir /opt/pip_pkgs_cache
+echo install pip packages
 pip install $PIP_PACKAGES
 
 
