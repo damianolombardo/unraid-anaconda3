@@ -15,7 +15,7 @@ $CONDA_EXE install -c conda-forge jupyter_contrib_nbextensions -y
 echo install conda packages
 $CONDA_EXE install $CONDA_PACKAGES -y 
 
-pip --cache-dir /opt/pip_pkgs_cache
+#pip --cache-dir /opt/pip_pkgs_cache
 echo install pip packages
 pip install $PIP_PACKAGES
 
