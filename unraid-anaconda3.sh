@@ -12,6 +12,7 @@ $CONDA_EXE install jupyter -y
 $CONDA_EXE install -c conda-forge jupyter_contrib_nbextensions -y 
 
 $CONDA_EXE install $CONDA_PACKAGES -y 
+pip --cache-dir /opt/pip_pkgs_cache
 pip install $PIP_PACKAGES
 
 
