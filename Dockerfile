@@ -4,4 +4,4 @@ WORKDIR /
 COPY docker-entrypoint.sh .
 
 ENTRYPOINT [ "/usr/bin/tini", "--" ]
-CMD [ "docker-entrypoint.sh" ]
+CMD [ "/docker-entrypoint.sh" ]
